@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+  </style>
+  <body>
+<h1>Palindrome opdracht R&D</h1>
+<input type="text" name="woordGebruiker" id="woordGebruiker" placeholder="Typ hier je woord" onkeyup="checkWoord()"><br>
+<span id="uitslag"></span>
+
+    <script type="text/javascript">
+    function checkWoord () {
+      let woordGebruiker = document.getElementById("woordGebruiker").value;
+      let desired = woordGebruiker.replace(/[^\w\s]/gi, '');
+      let desired2 = desired.replace(" ","");
+      let uitslag = isPalindrome(desired2);
+
+      function isPalindrome(s,i) {
+      return (i=i||0)<0||i>=s.length>>1||s[i]==s[s.length-1-i]&&isPalindrome(s,++i);}
+
+      if (uitslag == true) {
+        document.getElementById("uitslag").innerHTML = "Dit is een keerwoord!";
+      } else {
+        document.getElementById("uitslag").innerHTML = "Dit is geen keerwoord!";
+      }
+
+      console.log(desired2);
+    }
+    </script>
+  </body>
+</html>
