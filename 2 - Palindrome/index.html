@@ -21,7 +21,8 @@
       let woordGebruiker = document.getElementById("woordGebruiker").value;
       let desired = woordGebruiker.replace(/[^\w\s]/gi, '');
       let desired2 = desired.replace(" ","");
-      let uitslag = isPalindrome(desired2);
+      let desired3 = desired2.toLowerCase();
+      let uitslag = isPalindrome(desired3);
 
       function isPalindrome(s,i) {
       return (i=i||0)<0||i>=s.length>>1||s[i]==s[s.length-1-i]&&isPalindrome(s,++i);}
@@ -32,7 +33,7 @@
         document.getElementById("uitslag").innerHTML = "Dit is geen keerwoord!";
       }
 
-      console.log(desired2);
+      console.log(desired3);
     }
     </script>
   </body>
